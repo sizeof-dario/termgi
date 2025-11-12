@@ -12,26 +12,29 @@
  *          slightly vary, depending on the terminal.
  *          These are the 8 non-bright colours that will be displayed in an Ubuntu
  *          virtual terminal:
- *              - Black:          #010101
- *              - Red:            #DE382B
- *              - Green:          #39B54A
- *              - Yellow:         #FFC706
- *              - Blue:           #006FB8
- *              - Magenta:        #6E2671
- *              - Cyan:           #2CB5E9
- *              - White:          #CCCCCC
- *          .
+ *          <pre>
+ *          Black:   <span class = "color-swatch" style = "background-color: #010101;"></span>
+ *          Red:     <span class = "color-swatch" style = "background-color: #DE382B;"></span>
+ *          Green:   <span class = "color-swatch" style = "background-color: #39B54A;"></span>
+ *          Yellow:  <span class = "color-swatch" style = "background-color: #FFC706;"></span>
+ *          Blue:    <span class = "color-swatch" style = "background-color: #006FB8;"></span>
+ *          Magenta: <span class = "color-swatch" style = "background-color: #6E2671;"></span>
+ *          Cyan:    <span class = "color-swatch" style = "background-color: #2CB5E9;"></span>
+ *          White:   <span class = "color-swatch" style = "background-color: #CCCCCC;"></span>
+ *          </pre>
+ *          
  *          These are their bright counterparts (still as they are displayed in an
  *          Ubuntu virtual terminal):
- *              - Bright black:   #808080
- *              - Bright red:     #FF0000
- *              - Bright green:   #00FF00
- *              - Bright yellow:  #FFFF00
- *              - Bright blue:    #0000FF
- *              - Bright magenta: #FF00FF
- *              - Bright cyan:    #00FFFF
- *              - Bright white:   #FFFFFF
- *          .
+ *          <pre>
+ *          Bright black:   <span class = "color-swatch" style = "background-color: #808080;"></span>
+ *          Bright red:     <span class = "color-swatch" style = "background-color: #FF0000;"></span>
+ *          Bright green:   <span class = "color-swatch" style = "background-color: #00FF00;"></span>
+ *          Bright yellow:  <span class = "color-swatch" style = "background-color: #FFFF00;"></span>
+ *          Bright blue:    <span class = "color-swatch" style = "background-color: #0000FF;"></span>
+ *          Bright magenta: <span class = "color-swatch" style = "background-color: #FF00FF;"></span>
+ *          Bright cyan:    <span class = "color-swatch" style = "background-color: #00FFFF;"></span>
+ *          Bright white:   <span class = "color-swatch" style = "background-color: #FFFFFF;"></span>
+ *          </pre>
  * 
  **********************************************************************************/
 

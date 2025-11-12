@@ -1,0 +1,8 @@
+.color-swatch {
+    display: inline-block;
+    width: 48px;
+    height: 12px;
+    border: 1px solid #FFFFFF;
+    vertical-align: middle;
+    margin-left: 4px;
+}
