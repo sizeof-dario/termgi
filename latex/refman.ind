@@ -1,0 +1,29 @@
+\begin{theindex}
+
+  \item {bgColour}
+    \subitem {c16cell}, \hyperpage{7}
+
+  \indexspace
+
+  \item {c16cell}, \hyperpage{7}
+    \subitem {bgColour}, \hyperpage{7}
+    \subitem {ch}, \hyperpage{7}
+    \subitem {fgColour}, \hyperpage{7}
+  \item {c16cell\_t}
+    \subitem {termgci.h}, \hyperpage{10}
+  \item {ch}
+    \subitem {c16cell}, \hyperpage{7}
+  \item {colour16.h}, \hyperpage{9}
+
+  \indexspace
+
+  \item {fgColour}
+    \subitem {c16cell}, \hyperpage{7}
+
+  \indexspace
+
+  \item {termgci}, \hyperpage{1}
+  \item {termgci.h}, \hyperpage{10}
+    \subitem {c16cell\_t}, \hyperpage{10}
+
+\end{theindex}
