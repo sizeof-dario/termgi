@@ -33,5 +33,30 @@ The following sections will discuss the three abovementioned colour sets. If you
 the _change-colour-commands_ are implemented via [ANSI escape sequences](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797).
 
 ## The 16 colours set
+
+This set of colours is the most widely supported set. It includes 8 colours with their bright counterparts for a total of 16 (whence the name),
+both for the foreground and the background of text.
+
+The only possible downside is that these colours are not absolute.
+That means, they do not correspond to the same colours for all terminals. Rather, every terminal uses usually slightly – yet different – implementations.
+
+The colours are still listed and shown in the table below. As for _which_ concrete implementation is used as reference for the swatches and the examples, I picked the GNOME Terminal one:
+
+<div align = "center">  
+
+| Colour    | Swatch                                                 |RGB values |HEX value| Colour           | Swatch                                                 |RGB values |HEX value|
+| :---      | :---:                                                  | :---:     | :---:   | :---             | :---:                                                  | :---:     |:---:    |
+|**Black**  |![#010101](https://placehold.co/60x10/010101/010101.png)|  1,  1,  1|0x010101 |**Bright black**  |![#808080](https://placehold.co/60x10/808080/808080.png)|128,128,128|0x808080 |
+|**Red**    |![#DE382B](https://placehold.co/60x10/DE382B/DE382B.png)|222, 56, 43|0xDE382B |**Bright red**    |![#FF0000](https://placehold.co/60x10/FF0000/FF0000.png)|255,  0,  0|0xFF0000 |
+| Green     |
+| Yellow    |
+| Blue      |
+|**Magenta**|
+| Cyan
+| White
+
+</div>
+
 ## The 256 colours set
 ## The 24-bit colours set
+
