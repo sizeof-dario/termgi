@@ -47,18 +47,19 @@ I picked the GNOME Terminal one:
 
 | Colour    | Swatch                                          |RGB value      |HEX value | Colour           | Swatch                                          |RGB value      |HEX value |
 | :---      | :---:                                           | :---:         | :---:    | :---             | :---:                                           | :---:         |:---:     |
-|**Black**  |![](https://placehold.co/60x10/010101/010101.png)|`  1,   1,   1`|`0x010101`|**Bright black**  |![](https://placehold.co/60x10/808080/808080.png)|`128, 128, 128`|`0x808080`|
-|**Red**    |![](https://placehold.co/60x10/DE382B/DE382B.png)|`222,  56,  43`|`0xDE382B`|**Bright red**    |![](https://placehold.co/60x10/FF0000/FF0000.png)|`255,   0,   0`|`0xFF0000`|
-|**Green**  |![](https://placehold.co/60x10/39B54A/39B54A.png)|` 57, 181,  74`|`0x39B54A`|**Bright green**  |![](https://placehold.co/60x10/00FF00/00FF00.png)|`  0, 255,   0`|`0x00FF00`|
-|**Yellow** |![](https://placehold.co/60x10/FFC706/FFC706.png)|`255, 199,   6`|`0xFFC706`|**Bright yellow** |![](https://placehold.co/60x10/FFFF00/FFFF00.png)|`255, 255,   0`|`0xFFFF00`|
-|**Blue**   |![](https://placehold.co/60x10/006FB8/006FB8.png)|`  0, 111, 184`|`0x006FB8`|**Bright blue**   |![](https://placehold.co/60x10/0000FF/0000FF.png)|`  0,   0, 255`|`0x0000FF`|
-|**Magenta**|![](https://placehold.co/60x10/762671/762671.png)|`118,  38, 113`|`0x762671`|**Bright magenta**|![](https://placehold.co/60x10/FF00FF/FF00FF.png)|`255,   0, 255`|`0xFF00FF`|
-|**Cyan**   |![](https://placehold.co/60x10/2CB5E9/2CB5E9.png)|` 44, 181, 233`|`0x2CB5E9`|**Bright cyan**   |![](https://placehold.co/60x10/00FFFF/00FFFF.png)|`  0, 255, 255`|`0x00FFFF`|
-|**White**  |![](https://placehold.co/60x10/CCCCCC/CCCCCC.png)|`204, 204, 204`|`0xCCCCCC`|**Bright white**  |![](https://placehold.co/60x10/FFFFFF/FFFFFF.png)|`255, 255, 255`|`0xFFFFFF`|
+|**Black**  |![](https://placehold.co/60x13/010101/010101.png)|`  1,   1,   1`|`0x010101`|**Bright black**  |![](https://placehold.co/60x13/808080/808080.png)|`128, 128, 128`|`0x808080`|
+|**Red**    |![](https://placehold.co/60x13/DE382B/DE382B.png)|`222,  56,  43`|`0xDE382B`|**Bright red**    |![](https://placehold.co/60x13/FF0000/FF0000.png)|`255,   0,   0`|`0xFF0000`|
+|**Green**  |![](https://placehold.co/60x13/39B54A/39B54A.png)|` 57, 181,  74`|`0x39B54A`|**Bright green**  |![](https://placehold.co/60x13/00FF00/00FF00.png)|`  0, 255,   0`|`0x00FF00`|
+|**Yellow** |![](https://placehold.co/60x13/FFC706/FFC706.png)|`255, 199,   6`|`0xFFC706`|**Bright yellow** |![](https://placehold.co/60x13/FFFF00/FFFF00.png)|`255, 255,   0`|`0xFFFF00`|
+|**Blue**   |![](https://placehold.co/60x13/006FB8/006FB8.png)|`  0, 111, 184`|`0x006FB8`|**Bright blue**   |![](https://placehold.co/60x13/0000FF/0000FF.png)|`  0,   0, 255`|`0x0000FF`|
+|**Magenta**|![](https://placehold.co/60x13/762671/762671.png)|`118,  38, 113`|`0x762671`|**Bright magenta**|![](https://placehold.co/60x13/FF00FF/FF00FF.png)|`255,   0, 255`|`0xFF00FF`|
+|**Cyan**   |![](https://placehold.co/60x13/2CB5E9/2CB5E9.png)|` 44, 181, 233`|`0x2CB5E9`|**Bright cyan**   |![](https://placehold.co/60x13/00FFFF/00FFFF.png)|`  0, 255, 255`|`0x00FFFF`|
+|**White**  |![](https://placehold.co/60x13/CCCCCC/CCCCCC.png)|`204, 204, 204`|`0xCCCCCC`|**Bright white**  |![](https://placehold.co/60x13/FFFFFF/FFFFFF.png)|`255, 255, 255`|`0xFFFFFF`|
 
 </div>
 
 ## The 256 colours set
 ## The 24-bit colours set
+
 
 
