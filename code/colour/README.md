@@ -24,7 +24,7 @@ There are four sets of colours that are not equally supported by all terminals, 
 | Colour set         | Other names            | Supported on [^1]                                    | <ins>Not</ins> supported on [^1] |
 | :---               | :---                   | :---                                                 | :---                             |
 | **8 colours**      |                        | TTY Linux, GNOME Terminal, Windows Terminal          |                                  |
-| **16 colours**     | 8–16 colours           | TTY Linux (<ins>partially</ins>[^3]), GNOME Terminal |                                  |
+| **16 colours**     | 8–16 colours           | TTY Linux (<ins>partially</ins>[^2]), GNOME Terminal |                                  |
 | **256 colours**    | 8-bit colours          | GNOME Terminal, Windows Terminal                     | TTY Linux                        |
 | **24-bit colours** | Truecolor, RGB colours | GNOME Terminal, Windows Terminal                     | TTY Linux                        |
 
@@ -59,7 +59,7 @@ For example, the following table shows their appereance in the terminals I could
 
 <div align = "center">
 
-| Colour    | TTY Linux | GNOME Terminal | Windows Terminal | VS Code terminal[^4] |
+| Colour    | TTY Linux | GNOME Terminal | Windows Terminal | VS Code terminal[^3] |
 | :---      | :---:     | :---:          | :---:            | :---:                         |
 |**Black**  |![](https://placehold.co/60x15/010101/010101.png)|![](https://placehold.co/60x15/171421/171421.png)|![](https://placehold.co/60x15/0C0C0C/0C0C0C.png)|![](https://placehold.co/60x15/000000/000000.png)|
 |**Red**    |![](https://placehold.co/60x15/DE382B/DE382B.png)|![](https://placehold.co/60x15/C01C28/C01C28.png)|![](https://placehold.co/60x15/C50F1F/C50F1F.png)|![](https://placehold.co/60x15/CD3131/CD3131.png)|
@@ -80,7 +80,7 @@ Before moving to the **16 colours set**, this is how this set colours appear whe
 ![](.assets/colour-8-tty.png)
 </div>
 
-[^4]: With the **Dark+** theme.
+[^3]: With the **Dark+** theme.
 
 ## The 16 colours set
 
@@ -110,6 +110,7 @@ Also, this is how they look when used in the GNOME Terminal:
 
 ## The 256 colours set
 ## The 24-bit colours set
+
 
 
 
