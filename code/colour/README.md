@@ -17,6 +17,8 @@ First of all, here's a:
 > to green, and then go with a `printf("c");`. However, both for simplicity and because this is not relevant for a correct usage of the library functions,
 > in the rest of this repository I address colours as a property of characters and I might say things like "_printing a yellow 'd' with a magenta background_".
 
+## Colour sets
+
 There are four sets of colours that are not equally supported by all terminals, each one being a superset of the previous one:
 
 <div align = "center">
@@ -39,7 +41,7 @@ There are four sets of colours that are not equally supported by all terminals, 
 The following sections will discuss the abovementioned sets. If you are interested in the details behind the implementation, know that
 the _change-colour-commands_ are implemented via [ANSI escape sequences](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797).
 
-## The 8 colours set
+### The 8 colours set
 
 This set allows you to use, both for foreground and background:
 * Black
@@ -82,7 +84,7 @@ Before moving to the **16 colours set**, this is how this set colours appear whe
 
 [^3]: With the **Dark+** theme.
 
-## The 16 colours set
+### The 16 colours set
 
 This set expands the **8 colours** one with 8 new colours that are the bright versions of the already existing ones, both for the foreground and the background of text.
 
@@ -108,8 +110,9 @@ Also, this is how they look when used in the GNOME Terminal:
 ![](.assets/16-colour-set.png)
 </div>
 
-## The 256 colours set
-## The 24-bit colours set
+### The 256 colours set
+### The 24-bit colours set
+
 
 
 
