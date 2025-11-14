@@ -17,18 +17,16 @@ There are four sets of colours that are not equally supported by all terminals, 
  
 | Colour set         | Other names            | Supported on [^1]                                    | <ins>Not</ins> supported on [^1][^2] |
 | :---               | :---                   | :---                                                 | :---                                 |
-| **8 colours**      |                        | TTY Linux, GNOME Terminal, Windows shells[^3]        |                                      |
-| **16 colours**     | 8–16 colours           | TTY Linux (<ins>partially</ins>[^4]), GNOME Terminal |                                      |
-| **256 colours**    | 8-bit colours          | GNOME Terminal, VSCode terminal                      | TTY Linux                            |
-| **24-bit colours** | Truecolor, RGB colours | GNOME Terminal, VSCode terminal                      | TTY Linux                            |
+| **8 colours**      |                        | TTY Linux, GNOME Terminal, Windows Terminal          |                                      |
+| **16 colours**     | 8–16 colours           | TTY Linux (<ins>partially</ins>[^3]), GNOME Terminal |                                      |
+| **256 colours**    | 8-bit colours          | GNOME Terminal, Windows Terminal                     | TTY Linux                            |
+| **24-bit colours** | Truecolor, RGB colours | GNOME Terminal, Windows Terminal                     | TTY Linux                            |
 
 </div>
 
 [^1]: These are just **some** examples, obtained via **personal** testing, so they could be inaccurate and they're not exhaustive at all.
 [^2]: Trying to use a colour from an unsupported set results in it getting approximated to its closest match in the biggest supported set.
-[^3]: Command Prompt, Windows PowerShell, PowerShell Core and PowerShell 7.
-[^4]: Only for foreground colours.
-
+[^3]: Only for foreground colours.
 
 The following sections will discuss the abovementioned sets. If you are interested in the details behind the implementation, know that
 the _change-colour-commands_ are implemented via [ANSI escape sequences](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797).
@@ -53,19 +51,21 @@ For example, the following table shows their appereance in the terminals I could
 
 <div align = "center">
 
-
-
-| Colour    | TTY Linux                                       | GNOME Terminal                                  | Windows Shells[^4]                              |
-| :---      | :---:                                           | :---:                                           | :---:                                           |
-|**Black**  |![](https://placehold.co/60x15/010101/010101.png)|![](https://placehold.co/60x15/171421/171421.png)|![](https://placehold.co/60x15/0C0C0C/0C0C0C.png)|
-|**Red**    |![](https://placehold.co/60x15/DE382B/DE382B.png)|![](https://placehold.co/60x15/C01C28/C01C28.png)|![](https://placehold.co/60x15/C50F1F/C50F1F.png)|
-|**Green**  |![](https://placehold.co/60x15/39B54A/39B54A.png)|![](https://placehold.co/60x15/26A269/26A269.png)|![](https://placehold.co/60x15/13A10E/13A10E.png)|
-|**Yellow** |![](https://placehold.co/60x15/FFC706/FFC706.png)|![](https://placehold.co/60x15/A2734C/A2734C.png)|![](https://placehold.co/60x15/C19C00/C19C00.png)|
-|**Blue**   |![](https://placehold.co/60x15/006FB8/006FB8.png)|![](https://placehold.co/60x15/12488B/12488B.png)|![](https://placehold.co/60x15/0037DA/0037DA.png)|
-|**Magenta**|![](https://placehold.co/60x15/762671/762671.png)|![](https://placehold.co/60x15/A347BA/A347BA.png)|![](https://placehold.co/60x15/881798/881798.png)|
-|**Cyan**   |![](https://placehold.co/60x15/2CB5E9/2CB5E9.png)|![](https://placehold.co/60x15/2AA1B3/2AA1B3.png)|![](https://placehold.co/60x15/3A96DD/3A96DD.png)|
-|**White**  |![](https://placehold.co/60x15/CCCCCC/CCCCCC.png)|![](https://placehold.co/60x15/D0CFCC/D0CFCC.png)|![](https://placehold.co/60x15/CCCCCC/CCCCCC.png)|
+| Colour    | TTY Linux | GNOME Terminal | Windows Terminal | VS Code terminal[^4] |
+| :---      | :---:     | :---:          | :---:            | :---:                         |
+|**Black**  |![](https://placehold.co/60x15/010101/010101.png)|![](https://placehold.co/60x15/171421/171421.png)|![](https://placehold.co/60x15/0C0C0C/0C0C0C.png)|![](https://placehold.co/60x15/000000/000000.png)|
+|**Red**    |![](https://placehold.co/60x15/DE382B/DE382B.png)|![](https://placehold.co/60x15/C01C28/C01C28.png)|![](https://placehold.co/60x15/C50F1F/C50F1F.png)|![](https://placehold.co/60x15/CD3131/CD3131.png)|
+|**Green**  |![](https://placehold.co/60x15/39B54A/39B54A.png)|![](https://placehold.co/60x15/26A269/26A269.png)|![](https://placehold.co/60x15/13A10E/13A10E.png)|![](https://placehold.co/60x15/0DBC79/0DBC79.png)|
+|**Yellow** |![](https://placehold.co/60x15/FFC706/FFC706.png)|![](https://placehold.co/60x15/A2734C/A2734C.png)|![](https://placehold.co/60x15/C19C00/C19C00.png)|![](https://placehold.co/60x15/E5E510/E5E510.png)|
+|**Blue**   |![](https://placehold.co/60x15/006FB8/006FB8.png)|![](https://placehold.co/60x15/12488B/12488B.png)|![](https://placehold.co/60x15/0037DA/0037DA.png)|![](https://placehold.co/60x15/2472C8/2472C8.png)|
+|**Magenta**|![](https://placehold.co/60x15/762671/762671.png)|![](https://placehold.co/60x15/A347BA/A347BA.png)|![](https://placehold.co/60x15/881798/881798.png)|![](https://placehold.co/60x15/BC3FBC/BC3FBC.png)|
+|**Cyan**   |![](https://placehold.co/60x15/2CB5E9/2CB5E9.png)|![](https://placehold.co/60x15/2AA1B3/2AA1B3.png)|![](https://placehold.co/60x15/3A96DD/3A96DD.png)|![](https://placehold.co/60x15/11A8CD/11A8CD.png)|
+|**White**  |![](https://placehold.co/60x15/CCCCCC/CCCCCC.png)|![](https://placehold.co/60x15/D0CFCC/D0CFCC.png)|![](https://placehold.co/60x15/CCCCCC/CCCCCC.png)|![](https://placehold.co/60x15/E5E5E5/E5E5E5.png)|
 </div>
+
+As you can see, the difference between terminals (also considering editor/IDEs' ones) is relatively visible, especially with certain colours like yellow, so keep that in mind when designing your applications!
+
+[^4]: With the **Dark+** theme.
 
 ## The 16 colours set
 
@@ -95,10 +95,11 @@ Also, this is how they look in the GNOME Terminal:
 ![](.assets/16-colour-set.png)
 </div>
 
-[^5]: As for the swatches, the RGB values and the HEX values, they refer to the GNOME Terminal implementation of the colour set (as they also match the image following the table).
+[^5]: As for the swatches and the RGB and HEX values, they refer to the GNOME Terminal implementation of the colour set (as they also match the image following the table).
 
 ## The 256 colours set
 ## The 24-bit colours set
+
 
 
 
