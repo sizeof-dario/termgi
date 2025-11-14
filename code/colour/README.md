@@ -76,7 +76,8 @@ As you can see, the difference between terminals (also considering editor/IDEs' 
 Before moving to the **16 colours set**, this is how this set colours appear when used in the TTY Linux:
 
 <div align = "center">
-![](.assets/colour-8-tty.png);
+ 
+![](.assets/colour-8-tty.png)
 </div>
 
 [^4]: With the **Dark+** theme.
@@ -109,6 +110,7 @@ Also, this is how they look when used in the GNOME Terminal:
 
 ## The 256 colours set
 ## The 24-bit colours set
+
 
 
 
