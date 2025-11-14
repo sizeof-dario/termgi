@@ -38,7 +38,7 @@ There are four sets of colours that are not equally supported by all terminals, 
 <ins>If you try to use a colour on a terminal that doesn't support it</ins>, nothing bad will happen anyway, <ins>it will</ins> just 
 <ins>get approximated by its closest supported colour</ins>.
 
-The following sections will discuss the abovementioned sets. If you are interested in the details behind the implementation, know that
+The following subsections will discuss the abovementioned sets. If you are interested in the details behind the implementation, know that
 the _change-colour-commands_ are implemented via [ANSI escape sequences](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797).
 
 ### The 8 colours set
@@ -112,6 +112,9 @@ Also, this is how they look when used in the GNOME Terminal:
 
 ### The 256 colours set
 ### The 24-bit colours set
+
+## Library colour functions
+
 
 
 
