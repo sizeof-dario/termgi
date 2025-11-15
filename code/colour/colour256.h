@@ -1,6 +1,1 @@
-
-
-typedef struct colour256
-{
-    char c;
-} colour256_t;
+typedef char colour256_t[11];

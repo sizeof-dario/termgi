@@ -1,5 +1,1 @@
-
-typedef struct colour24b
-{
-    char c;
-} colour24b_t;
+typedef char colour24b_t[19];

@@ -1,26 +1,22 @@
-/**
- * @file colour.h
- * 
- * @brief Umbrella header for the colour*.h files.
- * 
- * @details 
- * 
- * @link https://github.com/sizeof-dario/termgci.git @endlink
- * 
- */
-
 #ifndef COLOUR_H
 #define COLOUR_H
+
+#include <stdio.h>
 
 #include "colour16.h"
 #include "colour256.h"
 #include "colour24b.h"
 
-typedef union colour
+typedef char *colour_t;
+
+static inline int SetTerminalColour(colour_t colour)
 {
-    colour16_t c16;
-    colour256_t c256;
-    colour24b_t c24b;
-} colour_t;
+    return printf("%s", colour);
+}
+
+static inline int RestoreTerminalColour()
+{
+    return printf("%s%s", FOREGROUND_DEFAULT, BACKGROUND_DEFAULT);
+}
 
 #endif // COLOUR_H

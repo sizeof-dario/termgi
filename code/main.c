@@ -4,7 +4,9 @@
 
 int main()
 {
-    colour_t colour;
+    SetTerminalColour(FOREGROUND_BRIGHT_YELLOW);
 
-    // There is some bug to fix here
+    printf("Hello World!\n");
+    
+    RestoreTerminalColour();
 }
