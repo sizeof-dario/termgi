@@ -113,7 +113,24 @@ Also, this is how they look when used in the GNOME Terminal:
 ### The 256 colours set
 ### The 24-bit colours set
 
-## Library colour functions
+## Using the library
+
+Speaking of colours, the library defines the following four types:
+- `colour16_t`
+- `colour256_t`
+- `colour24b_t`
+- `colour_t`
+
+And also the following two functions:
+- **`int SetTerminalColour(**colour_t** colour);`**
+- **`int RestoreTerminalColour();`**
+
+
+If you want to directly change the background or foreground colour, you need to call
+```
+int SetTerminalColour( colour);
+```
+
 
 
 
