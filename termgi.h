@@ -21,9 +21,11 @@
       (unsigned int)(unsigned char)b)
 
 typedef enum layer { FOREGROUND = '3', BACKGROUND = '4' } layer_t;
-typedef char colourseq_t[20];
 
-void tocolourseq(colourseq_t seq, int colour, layer_t layer);
+#define COLOUR_LENGTH 20
+typedef char colour_t[COLOUR_LENGTH];
+
+void tocolour(colour_t colour, int value, layer_t layer);
 
 // Write formatted and coloured output to stdout.
 int printfc(const char *format_and_colour, ...);

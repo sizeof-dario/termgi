@@ -3,7 +3,8 @@
 
 int main()
 {
-    printfc("\n#fI can both use %s and #fcolour specifiers#f (I guess that's how I'm calling them)\n\n", 0xffff00, RGB(255, 0, 0), 0xFFFF00, "format specifiers");
+    int written = printfc("#fText", RGB(0, 200, 0));
+    printf("\nWritten: %d\n", written);
 }
 
 
