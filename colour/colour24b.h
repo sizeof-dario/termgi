@@ -1,1 +1,0 @@
-typedef char colour24b_t[19];

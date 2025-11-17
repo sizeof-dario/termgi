@@ -6,7 +6,7 @@
 
 #include "colour16.h"
 #include "colour256.h"
-#include "colour24b.h"
+#include "colour24bit.h"
 
 typedef char *colour_t;
 

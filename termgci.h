@@ -1,6 +1,6 @@
-#ifndef TERMGCI_H
-#define TERMGCI_H
+#ifndef TERMGI_H
+#define TERMGI_H
 
 #include "colour/colour.h"
 
-#endif // TERMGCI_H
+#endif // TERMGI_H
