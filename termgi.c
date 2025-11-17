@@ -27,36 +27,68 @@ int printfc(const char* format_and_colour, ...)
     
     int i = 0;
     int j = 0;
+    size_t bufsizeexcess = 0;
     char seq[20];
 
-    char *buffer = (char*)malloc(4096);
-    memset(buffer, '\0', 4096);
+    while (format_and_colour[i])
+    {
+        if (format_and_colour[i] == '#')
+        {
+            bufsizeexcess++;
+        }
+        i++;
+    }
+    i = 0;
+
+    char *buffer = (char*)malloc(strlen(format_and_colour) + 20 * bufsizeexcess + 1);
+    memset(buffer, '\0', strlen(format_and_colour) + 20 * bufsizeexcess + 1);
 
     va_list ap;
     va_start(ap, format_and_colour);
 
     while(i < 4096 && format_and_colour[j])
     {
-        if(format_and_colour[j] == '#' && format_and_colour[j + 1] != '#')
+        if (format_and_colour[j] == '#')
         {
-            tocolourseq(seq, va_arg(ap, int), format_and_colour[j + 1] == 'f' ? FOREGROUND : BACKGROUND);
-            strcpy(buffer + i, seq);
-            i += 19;
-            j += 2;
-        }
+            switch (format_and_colour[j + 1])
+            {
+            case 'f':
+            case 'F':
+                tocolourseq(seq, va_arg(ap, int), FOREGROUND);
+                strcpy(buffer + i, seq);
+                i += 19;
+                j += 2;
+                break;
+            
+            case 'b':
+            case 'B':
+                tocolourseq(seq, va_arg(ap, int), BACKGROUND);
+                strcpy(buffer + i, seq);
+                i += 19;
+                j += 2;
+                break;
 
-        if(format_and_colour[j] == '#' && format_and_colour[j + 1] == '#')
+            case '#':
+                buffer[i] = '#';
+                i++;
+                j += 2;
+                break;
+
+            default:
+                buffer[i] = format_and_colour[j];
+                i++;
+                j++;
+                break;
+            }
+        }
+        else
         {
             buffer[i] = format_and_colour[j];
             i++;
-            j += 2;
+            j++;
         }
-
-        buffer[i] = format_and_colour[j];
-
-        i++;
-        j++;
     }
+    strcpy(buffer + i, "\e[39m\e[49m");
 
     i += vprintf(buffer, ap);
 

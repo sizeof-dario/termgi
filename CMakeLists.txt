@@ -7,5 +7,5 @@ add_executable(a.out)
 target_sources(a.out
   PRIVATE
     main.c
-    termgci.c
+    termgi.c
 )
