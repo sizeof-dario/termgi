@@ -1,3 +1,3 @@
-# termgci
+# termgi
 
-**term**inal **g**raphics **c**ontrol **i**nterface
+**term**inal **g**raphics **i**nterface
