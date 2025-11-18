@@ -51,7 +51,7 @@ int main()
 produces the following output:
 <div align = "center">
  
-![](.assets/example1.png)
+![](assets/example1.png)
 </div>
 
 ```
@@ -64,14 +64,14 @@ int main()
 produces the following output:
 <div align = "center">
  
-![](.assets/example2.png)
+![](assets/example2.png)
 </div>
 
 ```
 // Example 3 (Using colour specifiers TOGETHER WITH format specifiers)
 int main()
 {
-        printfc("#b#%s #fWorld#f%c\n",
+        printfc("#b#f%s #fWorld#f%c\n",
                 RGB(255, 255, 255), RGB(0, 255, 0), RGB(0, 0, 255), RGB(0, 0, 0),
                 "Hello", '!');
 }
@@ -79,20 +79,20 @@ int main()
 produces the following output:
 <div align = "center">
  
-![](.assets/example3.png)
+![](assets/example3.png)
 </div>
 
 ```
 // Example 4 (Using # in format specifiers)
 int main()
 {
-        printf("An exadecimal number: %#x\n, 15);
-        printfc("An exadecimal number: %##x\n, 15);
+        printf("An exadecimal number: %#x\n", 15);
+        printfc("An exadecimal number: %##x\n", 15);
 }
 ```
 produces the following output:
 
 <div align = "center">
  
-![](.assets/example4.png)
+![](assets/example4.png)
 </div>
