@@ -49,6 +49,10 @@ int main()
 }
 ```
 produces the following output:
+<div align = "center">
+ 
+![](.assets/example1.png)
+</div>
 
 ```
 // Example 2 (Using colour specifiers)
@@ -58,6 +62,11 @@ int main()
 }
 ```
 produces the following output:
+<div align = "center">
+ 
+![](.assets/example2.png)
+</div>
+
 ```
 // Example 3 (Using colour specifiers TOGETHER WITH format specifiers)
 int main()
@@ -68,6 +77,11 @@ int main()
 }
 ```
 produces the following output:
+<div align = "center">
+ 
+![](.assets/example3.png)
+</div>
+
 ```
 // Example 4 (Using # in format specifiers)
 int main()
@@ -78,3 +92,7 @@ int main()
 ```
 produces the following output:
 
+<div align = "center">
+ 
+![](.assets/example4.png)
+</div>
