@@ -3,8 +3,7 @@
 
 int main()
 {
-    int written = printfc("#fText", RGB(0, 200, 0));
-    printf("\nWritten: %d\n", written);
+    printf("\nWritten: %d\n", printfc("#f%s #f%s\n", RGB(0, 125, 0), RGB(0, 0, 125), "Hello", "World!"));
 }
 
 

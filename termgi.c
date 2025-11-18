@@ -23,30 +23,40 @@ void tocolour(colour_t colour, int value, layer_t layer)
 }
 
 int printfc(const char* format_and_colour, ...)
-{
-    
-    int i = 0;
-    int j = 0;
-    int written = 0;
-    colour_t t = { 0 };
-    size_t bufsizeexcess = 0;
+{   
+    // Declare local variables
+    int i, j, written, bufsize;
+    char *buffer;
+    colour_t t;
+    va_list ap;
 
+    /* Calculate bufsize *******************************************/
+    i = 0; // iterate over format_and_colour
+    j = 0; // used as # counter
     while (format_and_colour[i])
     {
         if (format_and_colour[i] == '#')
         {
-            bufsizeexcess++;
+            j++;
         }
         i++;
     }
-    i = 0;
+    bufsize = strlen(format_and_colour) + COLOUR_LENGTH * j + 10 + 1;
+    /***************************************************************/ 
 
-    char *buffer = (char*)malloc(strlen(format_and_colour) + 20 * bufsizeexcess + 10 + 1);
+    // Get the buffer
+    if(!(buffer = (char*)malloc(bufsize)))
+    {
+        va_end(ap);
+        return -1;
+    }
 
-    va_list ap;
+    /* Add colour escape sequences * ↓ *****************/
+    i = 0; // iterate over buffer
+    j = 0; // iterate over format_and_colour
+    written = 0;
     va_start(ap, format_and_colour);
-
-    while(i < strlen(format_and_colour) + 20 * bufsizeexcess + 1 && format_and_colour[j])
+    while(i < bufsize && format_and_colour[j])
     {
         if (format_and_colour[j] == '#')
         {
@@ -91,9 +101,12 @@ int printfc(const char* format_and_colour, ...)
         }
     }
     strcpy(buffer + i, "\e[39m\e[49m");
+    /* Add colour escape sequences * ↑ *****************/
 
+    // Call vprintf
     written += vprintf(buffer, ap) - 10;
 
+    // Clean and return
     va_end(ap);
     free(buffer);
     return written;
