@@ -20,6 +20,11 @@
      ((unsigned int)(unsigned char)g << 8)  | \
       (unsigned int)(unsigned char)b)
 
+#define CMYK(c, m, y, k) \
+    (RGB(255 * (1 - c % 101) * (1 - k % 101), \
+         255 * (1 - m % 101) * (1 - k % 101), \
+         255 * (1 - y % 101) * (1 - k % 101)))
+
 typedef enum layer { FOREGROUND = '3', BACKGROUND = '4' } layer_t;
 
 #define COLOUR_LENGTH 20
