@@ -1,9 +1,13 @@
 #include "termgi.h"
 
-void tocolour(colour_t colour, int value, layer_t layer)
+void tocolor (
+    color_t *const restrict color_p, 
+    const int value, 
+    const layer_t layer
+)
 {
-    strcpy(colour, "\e[08;2;000;000;000m");
-    colour[2] = layer;
+    strcpy(*color_p, "\e[08;2;000;000;000m");
+    (*color_p)[2] = layer;
 
     unsigned char r = (unsigned char)(value >> 16);
     unsigned char g = (unsigned char)(value >>  8);
@@ -11,13 +15,13 @@ void tocolour(colour_t colour, int value, layer_t layer)
 
     for (unsigned char i = 0; i < 3; i++)
     {
-        colour[9 - i] = r % 10 + 48;
+        (*color_p)[9 - i] = r % 10 + 48;
         r /= 10;
 
-        colour[13 - i] = g % 10 + 48;
+        (*color_p)[13 - i] = g % 10 + 48;
         g /= 10;
 
-        colour[17 - i] = b % 10 + 48;
+        (*color_p)[17 - i] = b % 10 + 48;
         b /= 10;
     }
 }
@@ -27,7 +31,7 @@ int printfc(const char* format_and_colour, ...)
     // Declare local variables
     int i, j, written, bufsize;
     char *buffer;
-    colour_t t;
+    color_t t;
     va_list ap;
 
     /* Calculate bufsize *******************************************/
@@ -41,7 +45,7 @@ int printfc(const char* format_and_colour, ...)
         }
         i++;
     }
-    bufsize = strlen(format_and_colour) + COLOUR_LENGTH * j + 10 + 1;
+    bufsize = strlen(format_and_colour) + COLOR_T__SIZE * j + 10 + 1;
     /***************************************************************/ 
 
     // Get the buffer
@@ -64,7 +68,7 @@ int printfc(const char* format_and_colour, ...)
             {
             case 'f':
             case 'F':
-                tocolour(t, va_arg(ap, int), FOREGROUND);
+                tocolor(&t, va_arg(ap, int), FOREGROUND);
                 strcpy(buffer + i, t);
                 i += 19;
                 j += 2;
@@ -73,7 +77,7 @@ int printfc(const char* format_and_colour, ...)
             
             case 'b':
             case 'B':
-                tocolour(t, va_arg(ap, int), BACKGROUND);
+                tocolor(&t, va_arg(ap, int), BACKGROUND);
                 strcpy(buffer + i, t);
                 i += 19;
                 j += 2;

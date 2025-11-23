@@ -1,1 +1,0 @@
-typedef char colour256_t[11];
