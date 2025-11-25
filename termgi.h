@@ -45,7 +45,7 @@ _Static_assert(sizeof(dword) == 4, "dword must be 4 bytes.");
  * can reach, including the null-terminator.
  * 
  */
-#define COLOR_T_SIZE 20
+#define COLOR_T_LENGTH 20
 
 
 
@@ -62,10 +62,10 @@ _Static_assert(sizeof(dword) == 4, "dword must be 4 bytes.");
  *      - R, G and B are respectively the red, green and blue components of the
  *        represented color.
  * 
- * The sequence is stored as a null-terminated string of length `COLOR_T__SIZE`.
+ * The sequence is stored as a null-terminated string of length `COLOR_T_LENGTH`.
  * 
  */
-typedef char color_t[COLOR_T_SIZE];
+typedef char color_t[COLOR_T_LENGTH];
 
 
 
@@ -98,7 +98,7 @@ static inline color_t *clrcpy (
     const color_t *const restrict source
 )   
 {
-    for (byte i = 0; i < COLOR_T_SIZE; i++)
+    for (byte i = 0; i < COLOR_T_LENGTH; i++)
     {
         (*destination)[i] = (*source)[i];
     }
@@ -149,6 +149,20 @@ void tocolor (
     const int value, 
     const layer_t layer
 );
+
+
+
+/** 
+ * @brief Escape sequence used to restore both foreground and background colors
+ *      to their default values.
+ * 
+ */
+#define DEFAULT_COLORS_SEQUENCE "\e[39m\e[49m"
+
+
+
+/** @brief Lenght of the `DEFAULT_COLORS_SEQUENCE` string. */
+#define DEFAULT_COLORS_SEQUENCE_LENGTH 11
 
 
 

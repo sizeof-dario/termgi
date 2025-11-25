@@ -34,93 +34,92 @@ void tocolor (
     }
 }
 
-
-
 int printfc(const char* format, ...)
 {   
-    // Declare local variables
-    int i, j, written, bufsize;
-    char *buffer;
-    color_t t;
-    va_list ap;
+    /** vvv * Calculates bufsize **********************************************/
 
-    /* Calculate bufsize *******************************************/
-    i = 0; // iterate over format
-    j = 0; // used as # counter
-    while (format[i])
+    int hashcount = 0;
+    for (int i = 0; format[i]; i++)
     {
         if (format[i] == '#')
         {
-            j++;
+            hashcount++;
         }
-        i++;
     }
-    bufsize = strlen(format) + COLOR_T_SIZE * j + 10 + 1;
-    /***************************************************************/ 
+    
+    int bufsize = strlen(format) 
+        + COLOR_T_LENGTH * hashcount 
+        + DEFAULT_COLORS_SEQUENCE_LENGTH;
 
-    // Get the buffer
-    if(!(buffer = (char*)malloc(bufsize)))
-    {
-        va_end(ap);
-        return -1;
-    }
+    /** ^^^ * Calculates bufsize **********************************************/
 
-    /* Add colour escape sequences * ↓ *****************/
-    i = 0; // iterate over buffer
-    j = 0; // iterate over format
-    written = 0;
+    // Gets the buffer.
+    char *buffer = (char*)malloc(bufsize);
+    if(!buffer) return -1;
+
+    /** vvv * Color formatting ************************************************/
+
+    int bufidx = 0; // Index iterating over the buffer.
+    int ftmidx = 0; // Index iterating over the format string.
+    int written = 0;
+    color_t temp_color;
+    va_list ap;
     va_start(ap, format);
-    while(i < bufsize && format[j])
+    while(bufidx < bufsize && format[ftmidx])
     {
-        if (format[j] == '#')
+        if (format[ftmidx] == '#')
         {
-            switch (format[j + 1])
+            switch (format[ftmidx + 1])
             {
             case 'f':
             case 'F':
-                tocolor(&t, va_arg(ap, int), FOREGROUND);
-                strcpy(buffer + i, t);
-                i += 19;
-                j += 2;
-                written -= 19;
+                tocolor(&temp_color, va_arg(ap, int), FOREGROUND);
+                strcpy(buffer + bufidx, temp_color);
+                bufidx += COLOR_T_LENGTH - 1; // Excluding the null-terminator.
+                ftmidx += 2;
+                written -= COLOR_T_LENGTH - 1;
                 break;
             
             case 'b':
             case 'B':
-                tocolor(&t, va_arg(ap, int), BACKGROUND);
-                strcpy(buffer + i, t);
-                i += 19;
-                j += 2;
-                written -= 19;
+                tocolor(&temp_color, va_arg(ap, int), BACKGROUND);
+                strcpy(buffer + bufidx, temp_color);
+                bufidx += COLOR_T_LENGTH - 1;
+                ftmidx += 2;
+                written -= COLOR_T_LENGTH - 1;
                 break;
 
             case '#':
-                buffer[i] = '#';
-                i++;
-                j += 2;
+                buffer[bufidx] = '#';
+                bufidx++;
+                ftmidx += 2;
                 break;
 
             default:
-                buffer[i] = format[j];
-                i++;
-                j++;
+                buffer[bufidx] = format[ftmidx];
+                bufidx++;
+                ftmidx++;
                 break;
             }
         }
         else
         {
-            buffer[i] = format[j];
-            i++;
-            j++;
+            buffer[bufidx] = format[ftmidx];
+            bufidx++;
+            ftmidx++;
         }
     }
-    strcpy(buffer + i, "\e[39m\e[49m");
-    /* Add colour escape sequences * ↑ *****************/
 
-    // Call vprintf
-    written += vprintf(buffer, ap) - 10;
+    strcpy(buffer + bufidx, DEFAULT_COLORS_SEQUENCE);
 
-    // Clean and return
+    /** ^^^ * Color formatting ************************************************/
+
+    // Calls vprintf and updates written. The +1 is needed to exclude the final
+    // null-terminator that is othewise counted with 
+    // `DEFAULT_COLORS_SEQUENCE_LENGTH`.
+    written += vprintf(buffer, ap) - DEFAULT_COLORS_SEQUENCE_LENGTH + 1;
+
+    // Cleans and return
     va_end(ap);
     free(buffer);
     return written;
